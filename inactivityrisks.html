@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeutriFIT - The Health Risks of Inactivity in Myanmar</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    /* Compact Language Toggle Button Styling */
+    .lang-toggle-btn {
+      background-color: var(--primary-cyan, #00e5ff);
+      color: #0d0f17;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 12px;
+      cursor: pointer;
+      margin-left: auto;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+
+    .lang-toggle-btn:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+  </style>
+
+    <link rel="stylesheet" href="responsive.css">
+    <script src="menu.js" defer></script>
+</head>
+<body>
+
+    <!-- Responsive mobile menu -->
+    <button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="mobile-menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="mobile-menu-overlay" data-menu-close></div>
+    <aside id="mobile-menu" class="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu-header">
+            <div class="mobile-menu-logo"><span>⚡️</span> NeutriFIT</div>
+            <button class="mobile-menu-close" type="button" aria-label="Close navigation menu" data-menu-close>×</button>
+        </div>
+        <nav class="mobile-menu-links" aria-label="Mobile navigation">
+            <a href="home.html">Home</a>
+            <a href="index.html">BMI Calculation</a>
+            <a href="workoutplan.html">Workout Planner</a>
+            <a href="nutrition.html">Nutrition</a>
+            <a href="supplements.html">Supplements</a>
+            <a href="info.html">Info</a>
+        </nav>
+    </aside>
+
+
+  <!-- Layout Wrapper Container -->
+  <div class="app-container">
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="logo">
+        <span>⚡️</span> NeutriFIT
+      </div>
+      <nav class="nav-links">
+        <a href="home.html" class="nav-btn">Home</a>
+        <a href="index.html" class="nav-btn">Bmi calculation</a>
+        <a href="workoutplan.html" class="nav-btn">Workout Planner</a>
+        <a href="nutrition.html" class="nav-btn">Nutrition</a>
+        <a href="supplements.html" class="nav-btn">Supplements</a>
+        <a href="info.html" class="nav-btn active">Info</a>
+      </nav>
+    </aside>
+
+    <a href="info.html" class="prev-btn">
+      <span>PREV</span>
+      <div class="arrow-icon">
+          <i class="fa-solid fa-chevron-left"></i>
+      </div>
+    </a>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <h1 class="header-title">Your Healthy Life Start Here !</h1>
+
+      <!-- Health Risks Detail Card -->
+      <article class="detail-card">
+        
+        <!-- Icon, Title Section & Compact Translate Button -->
+        <div class="detail-header">
+          <div class="card-icon">⚠️</div>
+          <h2 class="detail-title" id="cardTitle">The Health Risks of Inactivity in Myanmar</h2>
+          
+          <button class="lang-toggle-btn" id="langBtn" onclick="toggleLanguage()">မြန်မာစာဖြင့်ဖတ်ရန်</button>
+        </div>
+
+        <!-- English Content -->
+        <div class="detail-text" id="enContent">
+          <p>
+            In Myanmar, urbanization and desk-bound work have led to a dangerous rise in sedentary lifestyles. While we once focused primarily on infectious diseases, Non-Communicable Diseases (NCDs) now account for roughly 59% of deaths in the country. Physical inactivity is a primary driver of this shift.
+          </p>
+
+          <p>
+            Prolonged sitting is linked to heart disease, stroke, and an increased risk of Type 2 diabetes due to insulin resistance and chronic systemic inflammation. Additionally, obesity rates in Myanmar climbed from 6% to 13% between 2008 and 2015, highlighting a clear need for increased physical activity. Beyond physical health, inactivity is also linked to higher rates of anxiety and depression.
+          </p>
+
+          <p>
+            Do not fall for the "exercise compensation" myth; even if you exercise for an hour, sitting for the rest of the day carries independent metabolic risks. Break up your day with short bursts of movement. Whether you are a student or a professional, prioritizing daily activity—like 15 minutes of brisk walking—is essential. By moving more, you protect your long-term health against the rising burden of chronic disease in our country.
+          </p>
+        </div>
+
+        <!-- Myanmar Content (Hidden by default) -->
+        <div class="detail-text" id="myContent" style="display: none;">
+          <p>
+            မြန်မာနိုင်ငံတွင် မြို့ပြလာခြင်းနှင့် ရုံးထိုင်စာပွဲထိုင် အလုပ်များပြားလာခြင်းတို့ကြောင့် လှုပ်ရှားမှုနည်းသော လူနေမှုဘဝပုံစံ ပိုမိုများပြားလာပါသည်။ ယခင်က ကူးစက်ရောဂါများကို အဓိက ဂရုပြုခဲ့ကြသော်လည်း ယခုအခါ မကူးစက်နိုင်သော ရောဂါများ (NCDs) ကြောင့် သေဆုံးမှုသည် နိုင်ငံအတွင်း သေဆုံးမှုစုစုပေါင်း၏ ၅၉
+            ရာခိုင်နှုန်းခန့် အထိ ရှိလာခဲ့သည်။ ခန္ဓာကိုယ် လှုပ်ရှားမှု မရှိခြင်းသည် ဤကဲ့သို့ ပြောင်းလဲလာမှု၏ အဓိက အကြောင်းရင်းဖြစ်ပါသည်။
+          </p>
+
+          <p>
+            အချိန်အကြာကြီး ထိုင်ခြင်းသည် အင်ဆူလင်တုံ့ပြန်မှု မကောင်းခြင်းနှင့် ခန္ဓာကိုယ်တွင်း ရောင်ရမ်းမှုများကို ဖြစ်ပေါ်စေကာ နှလုံးရောဂါ၊ လေဖြတ်ခြင်းနှင့် အမျိုးအစား-၂ ဆီးချိုရောဂါ ဖြစ်ပွားနိုင်ခြေကို မြင့်မားစေသည်။ ထို့အပြင် မြန်မာနိုင်ငံတွင် အဝလွန်နှုန်းသည် ၂၀၀၈ မှ ၂၀၁၅ ခုနှစ်အတွင်း ၆ ရာခိုင်နှုန်းမှ ၁၃ ရာခိုင်နှုန်းအထိ မြင့်တက်လာခဲ့သဖြင့် ခန္ဓာကိုယ် လှုပ်ရှားမှု ပြုလုပ်ရန် ပိုမိုလိုအပ်နေကြောင်း ထင်ရှားစွာ ပြသနေပါသည်။ ရုပ်ပိုင်းဆိုင်ရာ ကျန်းမာရေးအပြင် လှုပ်ရှားမှု နည်းပါးခြင်းသည် စိုးရိမ်စိတ်လွန်ကဲခြင်းနှင့် စိတ်ဓာတ်ကျခြင်းတို့နှင့်လည်း ဆက်စပ်နေပါသည်။
+          </p>
+
+          <p>
+            "တစ်နေ့လျှင် လေ့ကျင့်ခန်း ၁ နာရီ လုပ်ထားရင် ကျန်တဲ့အချိန် အကြာကြီး ထိုင်နေလဲ ရပါတယ်" ဆိုသည့် အယူအဆမှားကို မယုံကြည်ပါနှင့်။ တစ်နေ့လုံး ထိုင်နေခြင်းသည် ခန္ဓာကိုယ် စွမ်းအင်သုံးစွဲမှုကို ထိခိုက်စေနိုင်ပါသည်။ တစ်နေ့တာလုံးတွင် ခဏတာ လှုပ်ရှားမှုများကို ထည့်သွင်းပေးပါ။ သင်သည် ကျောင်းသားဖြစ်စေ၊ ရုံးဝန်ထမ်းဖြစ်စေ တစ်နေ့လျှင် ၁၅ မိနစ်ခန့် ခပ်သွက်သွက် လမ်းလျှောက်ခြင်းကဲ့သို့ နေ့စဉ် လှုပ်ရှားမှုများကို ဦးစားပေးရန် အရေးကြီးပါသည်။ လှုပ်ရှားမှု ပိုမိုပြုလုပ်ခြင်းဖြင့် မိမိ၏ ရေရှည်ကျန်းမာရေးနှင့် နာတာရှည် ရောဂါများ ဖြစ်ပွားနိုင်ခြေကို ကာကွယ်လိုက်ပါ။
+          </p>
+        </div>
+
+      </article>
+    </main>
+
+  </div>
+
+  <!-- JavaScript logic -->
+  <script>
+    function toggleLanguage() {
+      const en = document.getElementById("enContent");
+      const my = document.getElementById("myContent");
+      const btn = document.getElementById("langBtn");
+      const title = document.getElementById("cardTitle");
+
+      if (en.style.display === "none") {
+        en.style.display = "flex";
+        my.style.display = "none";
+        btn.innerText = "မြန်မာစာဖြင့်ဖတ်ရန်";
+        title.innerText = "The Health Risks of Inactivity in Myanmar";
+      } else {
+        en.style.display = "none";
+        my.style.display = "flex";
+        btn.innerText = "Read in English";
+        title.innerText = "မြန်မာနိုင်ငံတွင် လှုပ်ရှားမှု နည်းပါးခြင်း၏ ကျန်းမာရေး ဆိုးကျိုးများ";
+      }
+    }
+  </script>
+
+</body>
+</html>

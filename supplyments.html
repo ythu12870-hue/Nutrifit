@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeutriFIT - Benefits and Precautions of Supplements</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    /* Compact Language Toggle Button Styling */
+    .lang-toggle-btn {
+      background-color: var(--primary-cyan, #00e5ff);
+      color: #0d0f17;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 12px;
+      cursor: pointer;
+      margin-left: auto;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+
+    .lang-toggle-btn:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+  </style>
+
+    <link rel="stylesheet" href="responsive.css">
+    <script src="menu.js" defer></script>
+</head>
+<body>
+
+    <!-- Responsive mobile menu -->
+    <button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="mobile-menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="mobile-menu-overlay" data-menu-close></div>
+    <aside id="mobile-menu" class="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu-header">
+            <div class="mobile-menu-logo"><span>⚡️</span> NeutriFIT</div>
+            <button class="mobile-menu-close" type="button" aria-label="Close navigation menu" data-menu-close>×</button>
+        </div>
+        <nav class="mobile-menu-links" aria-label="Mobile navigation">
+            <a href="home.html">Home</a>
+            <a href="index.html">BMI Calculation</a>
+            <a href="workoutplan.html">Workout Planner</a>
+            <a href="nutrition.html">Nutrition</a>
+            <a href="supplements.html">Supplements</a>
+            <a href="info.html">Info</a>
+        </nav>
+    </aside>
+
+
+  <!-- Layout Wrapper Container -->
+  <div class="app-container">
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="logo">
+        <span>⚡️</span> NeutriFIT
+      </div>
+      <nav class="nav-links">
+        <a href="home.html" class="nav-btn">Home</a>
+        <a href="index.html" class="nav-btn">Bmi calculation</a>
+        <a href="workoutplan.html" class="nav-btn">Workout Planner</a>
+        <a href="nutrition.html" class="nav-btn">Nutrition</a>
+        <a href="supplements.html" class="nav-btn">Supplements</a>
+        <a href="info.html" class="nav-btn active">Info</a>
+      </nav>
+    </aside>
+
+    <a href="info.html" class="prev-btn">
+      <span>PREV</span>
+      <div class="arrow-icon">
+          <i class="fa-solid fa-chevron-left"></i>
+      </div>
+    </a>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <h1 class="header-title">Your Healthy Life Start Here !</h1>
+
+      <!-- Supplements Detail Card -->
+      <article class="detail-card">
+        
+        <!-- Icon, Title Section & Compact Translate Button -->
+        <div class="detail-header">
+          <div class="card-icon">💊</div>
+          <h2 class="detail-title" id="cardTitle">Benefits and Precautions of Supplements</h2>
+          
+          <button class="lang-toggle-btn" id="langBtn" onclick="toggleLanguage()">မြန်မာစာဖြင့်ဖတ်ရန်</button>
+        </div>
+
+        <!-- English Content -->
+        <div class="detail-text" id="enContent">
+          <p>
+            Supplements have become a significant part of the modern fitness world. However, many people use them without fully understanding how they work. It is important to understand that supplements are meant to complement your diet, not replace real food.
+          </p>
+
+          <p>Common supplements include:</p>
+
+          <ul>
+            <li><strong>Whey Protein:</strong> A fast-absorbing protein used after exercise to repair muscle tissue.</li>
+            <li><strong>Creatine:</strong> Enhances strength, allowing for better performance during heavy lifting.</li>
+            <li><strong>Multivitamins:</strong> Provide essential micronutrients that may be lacking in your diet.</li>
+          </ul>
+
+          <p>
+            When choosing supplements, there are several precautions to keep in mind. First, check the quality and only purchase from trusted brands. Second, assess whether your body truly needs them; if you are already consuming enough protein through food, you may not need extra protein powder.
+          </p>
+
+          <p>
+            Using supplements in excess can put a strain on your kidneys and liver, so always follow the label instructions or a professional's recommendation. Most importantly, supplements are not "magic." A solid foundation of healthy food, adequate sleep, and consistent exercise is far more important than any supplement. Once you have established these three pillars, supplements can help optimize your results.
+          </p>
+        </div>
+        <!-- Myanmar Content (Hidden by default) -->
+        <div class="detail-text" id="myContent" style="display: none;">
+          <p>
+            ဖြည့်စွက်အာဟာရ (Supplements) များသည် ခေတ်သစ် ဖစ်တနစ်လောကတွင် အရေးပါသော အစိတ်အပိုင်းတစ်ခု ဖြစ်လာခဲ့သည်။ သို့သော် လူအများစုသည် ၎င်းတို့မည်သို့ အလုပ်လုပ်သည်ကို ပြည့်ဝစွာ နားမလည်ဘဲ သုံးစွဲနေကြသည်။ ဖြည့်စွက်အာဟာရများသည် ပုံမှန် အစားအစာများကို အစားထိုးရန် မဟုတ်ဘဲ အဖြည့်အစွက်အနေဖြင့်သာ သုံးစွဲရန်ဖြစ်ကြောင်း နားလည်ထားရန် လိုအပ်ပါသည်။
+          </p>
+
+          <p>အသုံးများသော ဖြည့်စွက်အာဟာရများမှာ -</p>
+
+          <ul>
+            <li><strong>Whey Protein:</strong> လေ့ကျင့်ခန်းလုပ်ပြီးနောက် ကြွက်သားမျှင်များကို ပြန်လည်ပြုပြင်ရန် အသုံးပြုသော ခန္ဓာကိုယ်မှ မြန်ဆန်စွာ စုပ်ယူနိုင်သည့် ပရိုတင်းဖြစ်သည်။</li>
+            <li><strong>Creatine:</strong> ခွန်အားကို တိုးတက်စေပြီး အလေးပင်မရာတွင် ပိုမိုစွမ်းဆောင်နိုင်စေသည်။</li>
+            <li><strong>Multivitamins:</strong> မိမိ၏ နေ့စဉ် အစားအစာတွင် လိုအပ်နေနိုင်သော အခြေခံ ဗီတာမင်နှင့် သတ္တုဓာတ်များကို ဖြည့်ဆည်းပေးသည်။</li>
+          </ul>
+
+          <p>
+            ဖြည့်စွက်အာဟာရများကို ရွေးချယ်ရာတွင် သတိပြုရမည့် အချက်များစွာ ရှိပါသည်။ ပထမဦးစွာ အရည်အသွေးကို စစ်ဆေးပြီး စိတ်ချရသော အမှတ်တံဆိပ်များထံမှသာ ဝယ်ယူပါ။ ဒုတိယအနေဖြင့် သင့်ခန္ဓာကိုယ်က အမှန်တကယ် လိုအပ်မှု ရှိမရှိ ဆန်းစစ်ပါ၊ အကယ်၍ သင်သည် အစားအစာမှ ပရိုတင်း လုံလောက်စွာ ရရှိနေပါက အပို ပရိုတင်းမှုန့်များ သောက်ရန် မလိုအပ်ပါ။
+          </p>
+
+          <p>
+            ဖြည့်စွက်အာဟာရများကို အလွန်အကျွံ သုံးစွဲခြင်းသည် ကျောက်ကပ်နှင့် အသည်းကို ဝန်ပိစေနိုင်သဖြင့် အညွှန်းပါအတိုင်း (သို့မဟုတ်) ကျွမ်းကျင်သူ၏ အကြံပြုချက်အတိုင်းသာ အမြဲလိုက်နာပါ။ အရေးကြီးဆုံးမှာ ဖြည့်စွက်အာဟာရများသည် အံ့သြဖွယ် ဆေးဝါးမဟုတ်ပါ။ ကျန်းမာရေးနှင့်ညီညွတ်သော အစားအစာ၊ လုံလောက်သော အိပ်စက်ခြင်းနှင့် မှန်မှန်လေ့ကျင့်ခန်းလုပ်ခြင်း စသည့် အခြေခံအချက် ၃ ချက်သည် မည်သည့် ဖြည့်စွက်အာဟာရထက်မဆို ပိုမိုအရေးကြီးပါသည်။ အဆိုပါ အခြေခံတိုင် ၃ တိုင်ကို ခိုင်မာအောင် တည်ဆောက်ပြီးပါက ဖြည့်စွက်အာဟာရများက သင့်ရလဒ်ကို ပိုမိုကောင်းမွန်အောင် ကူညီပေးနိုင်မည် ဖြစ်ပါသည်။
+          </p>
+        </div>
+
+      </article>
+    </main>
+
+  </div>
+
+  <!-- JavaScript logic -->
+  <script>
+    function toggleLanguage() {
+      const en = document.getElementById("enContent");
+      const my = document.getElementById("myContent");
+      const btn = document.getElementById("langBtn");
+      const title = document.getElementById("cardTitle");
+
+      if (en.style.display === "none") {
+        en.style.display = "flex";
+        my.style.display = "none";
+        btn.innerText = "မြန်မာစာဖြင့်ဖတ်ရန်";
+        title.innerText = "Benefits and Precautions of Supplements";
+      } else {
+        en.style.display = "none";
+        my.style.display = "flex";
+        btn.innerText = "Read in English";
+        title.innerText = "ဖြည့်စွက်အာဟာရများ၏ အကျိုးကျေးဇူးများနှင့် သတိပြုရန်အချက်များ";
+      }
+    }
+  </script>
+
+</body>
+</html>

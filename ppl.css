@@ -1,0 +1,411 @@
+:root {
+  --bg-dark: #0d0f17;
+  --sidebar-bg: #090a10;
+  --card-bg: #161822;
+  --icon-bg: #1e202d;
+  
+  --primary-cyan: #00e5ff;
+  --accent-green: #00c853;
+  --green-hover: #00e676;
+  --text-white: #ffffff;
+  --text-muted: #9e9e9e;
+  
+  --border-color: #00e5ff33;
+  --radius-lg: 16px;
+  --radius-md: 20px;
+  --radius-sm: 8px;
+}
+
+
+/* ==========================================
+   Article Detail View Layouts
+   ========================================== */
+.detail-card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  max-width: 850px;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 24px;
+  margin-bottom: 28px;
+}
+
+.detail-title {
+  font-size: 26px;
+  color: var(--primary-cyan);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.detail-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  line-height: 1.75;
+}
+
+.detail-text p {
+  font-size: 15px;
+  color: #e2e8f0;
+}
+
+.detail-text ul {
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 8px 0;
+}
+
+.detail-text li {
+  font-size: 15px;
+  color: #e2e8f0;
+  list-style-type: disc;
+}
+
+.detail-text strong {
+  color: var(--accent-green);
+  font-weight: 600;
+}
+
+:root {
+  --bg-dark: #0d0f17;
+  --sidebar-bg: #090a10;
+  --card-bg: #161822;
+  --icon-bg: #1e202d;
+  
+  --primary-cyan: #00e5ff;
+  --accent-green: #00c853;
+  --green-hover: #00e676;
+  --text-white: #ffffff;
+  --text-muted: #9e9e9e;
+  
+  --border-color: #00e5ff33;
+  --radius-lg: 16px;
+  --radius-md: 20px;
+  --radius-sm: 8px;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-white);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* Stacks header above main dashboard layout elements */
+}
+
+/* App Container Layout */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ==========================================
+   Top Header Sidebar Layout (Clean Minimalist Banner)
+   ========================================== */
+.sidebar {
+  width: 100%;
+  background-color: var(--sidebar-bg);
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start; /* Positions logo to the left border edge area */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  flex-shrink: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--text-white);
+}
+
+.logo span {
+  color: var(--primary-cyan);
+}
+
+/* ==========================================
+   Main Content Layout (Centers Grid Area)
+   ========================================== */
+.main-content {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.header-title, .page-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+  width: 100%;
+}
+
+.divider {
+  width: 100%;
+  max-width: 600px;
+  border: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0 auto 40px auto;
+}
+
+/* ==========================================
+   Workout Planner Grid Component Setup
+   ========================================== */
+.workout-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Locks layout cleanly into a 3-column system */
+  gap: 24px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.media-card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.media-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-cyan); /* Cyan borders flash up on mouse tracking */
+}
+.media-container {
+  width: 100%;
+  height: 300px;
+  background-color: var(--icon-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.media-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Centers asset image cleanly inside card window */
+}
+
+.media-info {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.media-info h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-white);
+}
+
+.media-info p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ==========================================
+   Reusable Card Components (For Reference Balance)
+   ========================================== */
+.card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-icon {
+  width: 60px;
+  height: 60px;
+  background-color: var(--icon-bg);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  flex-shrink: 0;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.card-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.btn-action {
+  display: inline-block;
+  align-self: flex-start;
+  margin-top: 8px;
+  padding: 8px 18px;
+  background-color: var(--accent-green);
+  color: #000;
+  font-weight: 600;
+  font-size: 13px;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-action:hover {
+  background-color: var(--green-hover);
+  transform: translateY(-2px);
+}
+
+/* Mobile Media Queries Breakdown Support */
+@media (max-width: 900px) {
+  .workout-grid {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+  }
+}
+/* ==========================================
+   PPL Menu Grid Stack Layout Styles
+   ========================================== */
+
+
+/* 3-Row Vertical Layout Stack Panel */
+.ppl-row-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* Base style for clickable menu rows */
+.ppl-row-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 120px; /* Clean row height profile */
+  background-color: var(--card-bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  text-decoration: none; /* Disables standard anchor text underlining underline */
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+/* Hover dynamic actions */
+.ppl-row-card:hover {
+  transform: scale(1.01) translateY(-2px);
+  border-color: var(--primary-cyan); /* Lights up cyan on mouse tracking hover */
+}
+
+/* Content wrapper within each individual row */
+.row-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Spreads content left and action text link right */
+}
+
+.row-content h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-white);
+  letter-spacing: 1px;
+}
+
+.row-content p {
+  font-size: 14px;
+  color: var(--text-muted);
+  flex: 1;
+  margin-left: 40px; /* Pushes subtext slightly away from title */
+}
+
+/* Action button cue text label sitting on row ends */
+.view-btn {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent-green);
+  transition: color 0.2s;
+}
+
+.ppl-row-card:hover .view-btn {
+  color: var(--green-hover);
+}
+.back{
+    position:absolute;
+    left:20px;
+    color:white;
+    font-size:30px;
+    text-decoration:none;
+    margin-left:20px;
+    margin-top:40px;
+}
+.logo,.back{
+  position:fixed;
+}
+/* Subtle accent tint gradients across the row backgrounds (Optional design theme flares) */
+.push-theme { border-left: 4px solid var(--primary-cyan); }
+.pull-theme { border-left: 4px solid var(--accent-green); }
+.leg-theme { border-left: 4px solid #a855f7; } /* Purple accent for your legs interface */
+/* Card Container ထဲက ပုံများအားလုံး အရွယ်အစား တူသွားစေရန် */
+.workout-grid img, 
+.card img {
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: cover !important;
+}
+
+/* Card ဘောင် အမြင့်များ ညီသွားစေရန် */
+.workout-grid > div, 
+.card {
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeutriFIT - Workout Planner</title>
+    <link rel="stylesheet" href="ppl.css">
+
+    <link rel="stylesheet" href="responsive.css">
+    <script src="menu.js" defer></script>
+</head>
+<body>
+
+    <!-- Responsive mobile menu -->
+    <button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="mobile-menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="mobile-menu-overlay" data-menu-close></div>
+    <aside id="mobile-menu" class="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu-header">
+            <div class="mobile-menu-logo"><span>⚡️</span> NeutriFIT</div>
+            <button class="mobile-menu-close" type="button" aria-label="Close navigation menu" data-menu-close>×</button>
+        </div>
+        <nav class="mobile-menu-links" aria-label="Mobile navigation">
+            <a href="home.html">Home</a>
+            <a href="index.html">BMI Calculation</a>
+            <a href="workoutplan.html">Workout Planner</a>
+            <a href="nutrition.html">Nutrition</a>
+            <a href="supplements.html">Supplements</a>
+            <a href="info.html">Info</a>
+        </nav>
+    </aside>
+
+
+    <div class="app-container">
+
+        <!-- 1. Streamlined Top Header Bar (Links Removed) -->
+        <aside class="sidebar">
+            <div class="logo">
+                <span>⚡️</span> NeutriFIT
+            </div>
+        </aside>
+
+        <!-- 2. Main Page Content Panel Area -->
+        <main class="main-content">
+            <h1 class="header-title">PUSH DAY WORKOUT</h1>
+            <hr class="divider">
+
+            <!-- 2-Row, 3-Column Video/Photo Grid Matrix -->
+            <div class="workout-grid">
+                
+                
+                <div class="media-card">
+                    <div class="media-container">
+                        <!-- Replace src with your local high_knees.png file path -->
+                        <video src="media/TD.mp4" autoplay loop muted playsinline></video>
+                    </div>
+                    <div class="media-info">
+                        <h3>Chest Dips</h3>
+                        <p> Lower Chest & Tricep Power</p>
+                    </div>
+                </div>
+
+                
+                <div class="media-card">
+                    <div class="media-container">
+                        <video src="media/DIBP.mp4" autoplay loop muted playsinline></video>
+                    </div>
+                    <div class="media-info">
+                        <h3>Incline Dumbbell Press</h3>
+                        <p>Upper Chest & Front Delt Builder</p>
+                    </div>
+                </div>
+                <div class="media-card">
+                    <div class="media-container">
+                        <video src="media/SSP.mp4" autoplay loop muted playsinline></video>
+                    </div>
+                    <div class="media-info">
+                        <h3>Shoulder PULL &amp; UP</h3>
+                        <p>Shoulder Strength & Overhead Stability</p>
+                    </div>
+                </div>
+
+                <div class="media-card">
+                    <div class="media-container">
+                        <video src="media/BP.mp4" autoplay loop muted playsinline></video>
+                    </div>
+                    <div class="media-info">
+                        <h3> Barbell Bench Press</h3>
+                        <p> Mid-Chest & Overall Push Power</p>
+                    </div>
+                </div>
+
+               
+                <div class="media-card">
+                    <div class="media-container">
+                        <video src="media/CTP.mp4" autoplay loop muted playsinline></video>
+                    </div>
+                    <div class="media-info">
+                        <h3>Tricep Pushdowns</h3>
+                        <p>Isolated Tricep Definition</p>
+                    </div>
+                </div>
+
+               
+                <div class="media-card">
+                    <div class="media-container">
+                        <video src="media/LR.mp4" autoplay loop muted playsinline></video>
+                    </div>
+                    <div class="media-info">
+                        <h3>Lateral Dumbbell Raises</h3>
+                        <p>Side Delt & Shoulder Width</p>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <a href="ppl.html" class="back">
+            <i class="fas fa-arrow-left"> 🔙</i> 
+    </a>
+
+</body>
+</html>

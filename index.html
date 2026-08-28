@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeutriFIT - BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    
+
+<style id="recommendation-result-links">
+.recommendation-link {
+    display: inline-block;
+    margin-top: 12px;
+    color: #00e676;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.recommendation-link:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+}
+</style>
+
+
+    <link rel="stylesheet" href="responsive.css">
+    <script src="menu.js" defer></script>
+</head>
+<body>
+
+    <!-- Responsive mobile menu -->
+    <button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="mobile-menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="mobile-menu-overlay" data-menu-close></div>
+    <aside id="mobile-menu" class="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu-header">
+            <div class="mobile-menu-logo"><span>⚡️</span> NeutriFIT</div>
+            <button class="mobile-menu-close" type="button" aria-label="Close navigation menu" data-menu-close>×</button>
+        </div>
+        <nav class="mobile-menu-links" aria-label="Mobile navigation">
+            <a href="home.html">Home</a>
+            <a href="index.html">BMI Calculation</a>
+            <a href="workoutplan.html">Workout Planner</a>
+            <a href="nutrition.html">Nutrition</a>
+            <a href="supplements.html">Supplements</a>
+            <a href="info.html">Info</a>
+        </nav>
+    </aside>
+
+
+    <div class="app-container">
+
+        <!-- 1. Sidebar Layout Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <span>⚡️</span> NeutriFIT
+            </div>
+            <nav class="nav-links">
+                <a href="home.html" class="nav-btn">Home</a>
+                <a href="index.html" class="nav-btn active">Bmi calculation</a>
+                <a href="workoutplan.html" class="nav-btn">Workout Planner</a>
+                <a href="nutrition.html" class="nav-btn">Nutrition</a>
+                <a href="supplements.html" class="nav-btn">Supplements</a>
+                <a href="info.html" class="nav-btn">Info</a>
+            </nav>
+        </aside>
+
+        <!-- 2. Main Content Panel -->
+        <main class="main-content">
+            <h1 class="header-title">BMI CALCULATOR</h1>
+
+            <!-- Form handles the submission trigger -->
+            <form id="bmiForm" class="calculator-form">
+                
+                <!-- Height Input Group -->
+                <div class="input-group">
+                    <label for="height">Height</label>
+                    <input type="text" id="height" placeholder="CM" required>
+                </div>
+
+                <!-- Weight Input Group -->
+                <div class="input-group">
+                    <label for="weight">Weight</label>
+                    <input type="text" id="weight" placeholder="LB" required>
+                </div>
+
+                <!-- Age Input Group -->
+                <div class="input-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" placeholder="Age" min="1" max="120" required>
+                </div>
+
+                <!-- Gender Selection Section -->
+                <div class="gender-section">
+                    <label class="gender-option">
+                        <input type="radio" name="gender" value="male" required>
+                        <span>Male</span>
+                    </label>
+                    <label class="gender-option">
+                        <input type="radio" name="gender" value="female" required>
+                        <span>Female</span>
+                    </label>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="generate-btn">Generate</button>
+            </form>
+
+            <!-- Hidden result-box required as a fallback placeholder in your DOM -->
+            <div id="result-box" style="display: none;">
+                <p><span id="bmi-value">0.0</span></p>
+                <p><span id="bmi-status">Normal</span></p>
+            </div>
+        </main>
+
+    </div>
+
+    <!-- 3. Link to your active JavaScript logic -->
+    <script src="script.js"></script>
+
+<script id="recommendation-result-links-script">
+(function () {
+    const recommendationPages = {
+        "underweight": "underweight.html",
+        "normal": "normal.html",
+        "normal weight": "normal.html",
+        "overweight": "overweight.html",
+        "obese": "obese.html"
+    };
+
+    function findResultElement() {
+        const candidates = Array.from(document.querySelectorAll(
+            '[id*="result" i], [class*="result" i], [id*="bmi" i], [class*="bmi" i]'
+        ));
+
+        return candidates.find(el => {
+            const text = (el.textContent || "").trim().toLowerCase();
+            return Object.keys(recommendationPages).some(key =>
+                new RegExp("\\b" + key.replace(" ", "\\s+") + "\\b", "i").test(text)
+            );
+        }) || null;
+    }
+
+    function addRecommendationLink() {
+        const resultEl = findResultElement();
+        if (!resultEl) return;
+
+        const text = (resultEl.textContent || "").trim().toLowerCase();
+        let page = null;
+        let label = null;
+
+        for (const [key, value] of Object.entries(recommendationPages)) {
+            const pattern = new RegExp("\\b" + key.replace(" ", "\\s+") + "\\b", "i");
+            if (pattern.test(text)) {
+                page = value;
+                label = key;
+                break;
+            }
+        }
+
+        if (!page) return;
+
+        const existing = resultEl.querySelector(".recommendation-link");
+        if (existing) {
+            existing.href = page;
+            return;
+        }
+
+        const link = document.createElement("a");
+        link.className = "recommendation-link";
+        link.href = page;
+        link.textContent = "View your " + label + " recommendations →";
+        link.setAttribute("aria-label", "View " + label + " workout and nutrition recommendations");
+
+        resultEl.appendChild(document.createElement("br"));
+        resultEl.appendChild(link);
+    }
+
+    // Works with normal button-based BMI calculators and dynamic result updates.
+    document.addEventListener("click", function () {
+        setTimeout(addRecommendationLink, 50);
+        setTimeout(addRecommendationLink, 300);
+    });
+
+    // Also watches for dynamically changed BMI result text.
+    const observer = new MutationObserver(addRecommendationLink);
+    observer.observe(document.body, { childList: true, subtree: true, characterData: true });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        addRecommendationLink();
+    });
+})();
+</script>
+
+
+<script id="recommendation-window-hook">
+(function () {
+    const originalOpen = window.open;
+
+    window.open = function () {
+        const reportWindow = originalOpen.apply(window, arguments);
+
+        if (!reportWindow) {
+            return reportWindow;
+        }
+
+        const timer = setInterval(function () {
+            try {
+                const doc = reportWindow.document;
+                const statusElement = doc.querySelector(".status-text");
+
+                if (!statusElement) return;
+
+                const status = statusElement.textContent.trim().toLowerCase();
+
+                const pages = {
+                    "underweight": "underweight.html",
+                    "normal weight": "normal.html",
+                    "overweight": "overweight.html",
+                    "obese": "obese.html"
+                };
+
+                const page = pages[status];
+                if (!page) return;
+
+                if (doc.querySelector(".recommendation-btn")) {
+                    clearInterval(timer);
+                    return;
+                }
+
+                const style = doc.createElement("style");
+                style.textContent = `
+                    .recommendation-btn {
+                        display: inline-block;
+                        margin-top: 14px;
+                        padding: 11px 20px;
+                        border: 2px solid #00e676;
+                        border-radius: 6px;
+                        background-color: #3f4453;
+                        color: #00e676;
+                        text-decoration: none;
+                        font-family: Arial, sans-serif;
+                        font-weight: bold;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                    }
+                    .recommendation-btn:hover {
+                        background-color: #2b2e38;
+                        color: #00ff75;
+                        box-shadow: 0 0 15px #00e676, inset 0 0 5px #00e676;
+                    }
+                `;
+                doc.head.appendChild(style);
+
+                const link = doc.createElement("a");
+                link.className = "recommendation-btn";
+                link.href = page;
+                link.textContent = "View Your " + status + " Workout & Nutrition →";
+
+                statusElement.insertAdjacentElement("afterend", link);
+
+                clearInterval(timer);
+            } catch (error) {
+                // The new tab may be writing its document; try again on the next interval.
+            }
+        }, 50);
+
+        return reportWindow;
+    };
+})();
+</script>
+
+</body>
+</html>

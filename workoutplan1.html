@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeutriFIT - Strengthening Muscles with Home Workouts</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    /* Compact Language Toggle Button Styling */
+    .lang-toggle-btn {
+      background-color: var(--primary-cyan, #00e5ff);
+      color: #0d0f17;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 12px;
+      cursor: pointer;
+      margin-left: auto;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+
+    .lang-toggle-btn:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+  </style>
+
+    <link rel="stylesheet" href="responsive.css">
+    <script src="menu.js" defer></script>
+</head>
+<body>
+
+    <!-- Responsive mobile menu -->
+    <button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="mobile-menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="mobile-menu-overlay" data-menu-close></div>
+    <aside id="mobile-menu" class="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu-header">
+            <div class="mobile-menu-logo"><span>⚡️</span> NeutriFIT</div>
+            <button class="mobile-menu-close" type="button" aria-label="Close navigation menu" data-menu-close>×</button>
+        </div>
+        <nav class="mobile-menu-links" aria-label="Mobile navigation">
+            <a href="home.html">Home</a>
+            <a href="index.html">BMI Calculation</a>
+            <a href="workoutplan.html">Workout Planner</a>
+            <a href="nutrition.html">Nutrition</a>
+            <a href="supplements.html">Supplements</a>
+            <a href="info.html">Info</a>
+        </nav>
+    </aside>
+
+
+  <!-- Layout Wrapper Container -->
+  <div class="app-container">
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="logo">
+        <span>⚡️</span> NeutriFIT
+      </div>
+      <nav class="nav-links">
+        <a href="home.html" class="nav-btn">Home</a>
+        <a href="index.html" class="nav-btn">Bmi calculation</a>
+        <a href="workoutplan.html" class="nav-btn">Workout Planner</a>
+        <a href="nutrition.html" class="nav-btn">Nutrition</a>
+        <a href="supplements.html" class="nav-btn">Supplements</a>
+        <a href="info.html" class="nav-btn active">Info</a>
+      </nav>
+    </aside>
+
+    <a href="info.html" class="prev-btn">
+      <span>PREV</span>
+      <div class="arrow-icon">
+          <i class="fa-solid fa-chevron-left"></i>
+      </div>
+    </a>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <h1 class="header-title">Your Healthy Life Start Here !</h1>
+
+      <!-- Detail Box -->
+      <article class="detail-card">
+        
+        <!-- Icon, Title Section & Compact Translate Button -->
+        <div class="detail-header">
+          <div class="card-icon">🏋️‍♂️</div>
+          <h2 class="detail-title" id="cardTitle">Strengthening Muscles with Home Workouts</h2>
+          
+          <button class="lang-toggle-btn" id="langBtn" onclick="toggleLanguage()">မြန်မာစာဖြင့်ဖတ်ရန်</button>
+        </div>
+
+        <!-- English Content -->
+        <div class="detail-text" id="enContent">
+          <p>
+            For those who lack the time to go to the gym, strengthening muscles with home workouts provides an accessible option. Essential equipment like simple resistance bands or light dumbbells can supplement bodyweight routines nicely.
+          </p>
+
+          <p>Essential movements to perform at home include:</p>
+
+          <ul>
+            <li><strong>Push-ups:</strong> These strengthen the chest, shoulders, and triceps.</li>
+            <li><strong>Squats:</strong> These are excellent for building leg and glute muscles.</li>
+            <li><strong>Planks:</strong> These tighten core muscles and improve overall body balance.</li>
+            <li><strong>Lunges:</strong> These are highly effective for lower body strength.</li>
+          </ul>
+
+          <p>
+            Never forget to perform a brief warm-up before exercising to prepare your heart and joints, preventing unexpected sports or alignment injuries.
+          </p>
+
+          <p>
+            A key advantage of home workouts is the ability to entirely control your own pace, adjusting targets based around your personal schedule and endurance level.
+          </p>
+        </div>
+
+        <!-- Myanmar Content (Hidden by default) -->
+        <div class="detail-text" id="myContent" style="display: none;">
+          <p>
+            ဂျင်မ် (Gym) သွားရန် အချိန်မအားလပ်သူများအတွက် အိမ်မှာပင် လေ့ကျင့်ခန်းလုပ်၍ ကြွက်သားတည်ဆောက်ခြင်းသည် အဆင်ပြေလွယ်ကူသော နည်းလမ်းဖြစ်ပါသည်။ ရိုးရှင်းသော Resistance Bands သို့မဟုတ် ပေါ့ပါးသော Dumbbells များကဲ့သို့ အခြေခံ ကိရိယာများကို ခန္ဓာကိုယ်အလေးချိန်သုံး လေ့ကျင့်ခန်းများ (Bodyweight Routines) နှင့် ပေါင်းစပ်အသုံးပြုနိုင်ပါသည်။
+          </p>
+          <p>အိမ်မှာ ပြုလုပ်နိုင်သည့် အဓိက လေ့ကျင့်ခန်းများမှာ -</p>
+
+          <ul>
+            <li><strong>Push-ups (ဒိုက်ထိုးခြင်း):</strong> ရင်ဘတ်၊ ပခုံးနှင့် လက်မောင်းနောက်ကြွက်သား (Triceps) များကို သန်မာစေသည်။</li>
+            <li><strong>Squats (ထိုင်ထလုပ်ခြင်း):</strong> ခြေထောက်နှင့် တင်ပါးကြွက်သားများ တည်ဆောက်ရန်အတွက် အထူးကောင်းမွန်သည်။</li>
+            <li><strong>Planks:</strong> ခန္ဓာကိုယ် အလယ်ဗဟိုကြွက်သား (Core) များကို တင်းရင်းစေပြီး ခန္ဓာကိုယ် မျှခြေကို တိုးတက်စေသည်။</li>
+            <li><strong>Lunges:</strong> ခန္ဓာကိုယ် အောက်ပိုင်း သန်မာရေးအတွက် အလွန်ထိရောက်သည်။</li>
+          </ul>
+
+          <p>
+            လေ့ကျင့်ခန်း မစမီ နှလုံးနှင့် အဆစ်အမြစ်များကို ပြင်ဆင်ရန် အကြောလျှော့လေ့ကျင့်ခန်း (Warm-up) ပြုလုပ်ရန် ဘယ်တော့မှ မမေ့ပါနှင့်။ ၎င်းသည် မထင်မှတ်ထားသော ဒဏ်ရာရရှိမှုများကို ကာကွယ်ပေးပါသည်။
+          </p>
+
+          <p>
+            အိမ်မှာ လေ့ကျင့်ခန်းလုပ်ခြင်း၏ အဓိက အားသာချက်မှာ မိမိ၏ အချိန်ဇယားနှင့် ကြံ့ခိုင်မှုအဆင့်ပေါ် မူတည်၍ လေ့ကျင့်ချိန် သတ်မှတ်ချက်များကို စိတ္ကြိုက် ထိန်းချုပ်ပြင်ဆင်နိုင်ခြင်း ဖြစ်ပါသည်။
+          </p>
+        </div>
+
+      </article>
+    </main>
+
+  </div>
+
+  <!-- JavaScript logic -->
+  <script>
+    function toggleLanguage() {
+      const en = document.getElementById("enContent");
+      const my = document.getElementById("myContent");
+      const btn = document.getElementById("langBtn");
+      const title = document.getElementById("cardTitle");
+
+      if (en.style.display === "none") {
+        en.style.display = "flex";
+        my.style.display = "none";
+        btn.innerText = "မြန်မာစာဖြင့်ဖတ်ရန်";
+        title.innerText = "Strengthening Muscles with Home Workouts";
+      } else {
+        en.style.display = "none";
+        my.style.display = "flex";
+        btn.innerText = "Read in English";
+        title.innerText = "အိမ်မှာတင် လေ့ကျင့်ခန်းလုပ်ပြီး ကြွက်သား တည်ဆောက်ခြင်း";
+      }
+    }
+  </script>
+
+</body>
+</html>
