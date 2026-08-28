@@ -1,0 +1,426 @@
+:root {
+  --bg-dark: #0d0f17;
+  --sidebar-bg: #090a10;
+  --card-bg: #161822;
+  --icon-bg: #1e202d;
+  
+  --primary-cyan: #00e5ff;
+  --accent-green: #00c853;
+  --green-hover: #00e676;
+  --text-white: #ffffff;
+  --text-muted: #9e9e9e;
+  
+  --border-color: #00e5ff33;
+  --radius-lg: 16px;
+  --radius-md: 20px;
+  --radius-sm: 8px;
+}
+.prev-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: #00e5ff;
+    background: transparent;
+    border: 2px solid #00e5ff;
+    padding: 6px 6px 6px 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1px;
+    
+    /* ဒေါင့်နားတွင် အနေတော် ဆိုဒ်လေး ဖြစ်စေရန် */
+    width: fit-content;
+    align-self: flex-start;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+}
+
+/* ညာဘက် စက်ဝိုင်းပုံ Arrow ဒီဇိုင်း */
+.prev-btn .arrow-icon {
+    width: 28px;
+    height: 28px;
+    border: 2px solid #00e5ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+.chart-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* ပုံနှင့် Button အကွာအဝေး */
+}
+
+/* ပုံဒီဇိုင်း */
+.chart-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* AI Chat Button ဒီဇိုင်း (Cyan Glow Style) */
+.ai-chat-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(0, 229, 255, 0.1);
+    color: #00e5ff;
+    border: 1px solid #00e5ff;
+    padding: 10px 22px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+
+/* Mouse တင်လိုက်ပါက လင်းသွားစေရန် */
+.ai-chat-btn:hover {
+    background: #00e5ff;
+    color: #0d0f17;
+    box-shadow: 0 0 12px rgba(0, 229, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Mouse တင်လိုက်ပါက Glow ဖြစ်သွားစေရန် */
+.prev-btn:hover {
+    background: #00e5ff;
+    color: #0d0f17;
+    box-shadow: 0 0 12px rgba(0, 229, 255, 0.4);
+}
+
+.prev-btn:hover .arrow-icon {
+    border-color: #0d0f17;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-white);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row; /* FIX: Keeps sidebar and main section side-by-side */
+}
+
+/* App Container Layout */
+.app-container {
+  display: flex;
+  flex-direction: row; /* FIX: Forces layout elements left-to-right */
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ==========================================
+   Sidebar Layout (Restored to Vertical Left Bar)
+   ========================================== */
+.sidebar {
+  width: 240px; /* Fixed left-side width */
+  background-color: var(--sidebar-bg);
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column; /* Stacks links vertically */
+  gap: 30px;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  flex-shrink: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--text-white);
+}
+
+.logo span {
+  color: var(--primary-cyan);
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column; /* Keeps buttons in a vertical stack */
+  gap: 12px;
+}
+
+.nav-btn {
+  display: block;
+  padding: 10px 16px;
+  color: var(--accent-green);
+  text-decoration: none;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.nav-btn:hover {
+  background-color: rgba(0, 229, 255, 0.1);
+}
+
+.nav-btn.active {
+  background-color: var(--primary-cyan);
+  color: #000;
+  font-weight: bold;
+  border-color: var(--primary-cyan);
+}
+
+/* ==========================================
+   Main Content Layout (Centers Content Box perfectly on the Right)
+   ========================================== */
+.main-content {
+  flex: 1; /* Takes up all remaining screen space on the right side */
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;    /* Centers your form horizontally in the right panel area */
+  justify-content: center; /* Centers your form vertically in the right panel area */
+  width: 100%;
+}
+
+.header-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   Card Component (Reusable)
+   ========================================== */
+.card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-icon {
+  width: 60px;
+  height: 60px;
+  background-color: var(--icon-bg);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  flex-shrink: 0;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.card-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Action Button */
+.btn-action {
+  display: inline-block;
+  align-self: flex-start;
+  margin-top: 8px;
+  padding: 8px 18px;
+  background-color: var(--accent-green);
+  color: #000;
+  font-weight: 600;
+  font-size: 13px;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-action:hover {
+  background-color: var(--green-hover);
+  transform: translateY(-2px);
+}
+/* ==========================================
+   Calculator Form Component
+   ========================================== */
+.calculator-form {
+  background-color: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 0 auto;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.input-group input[type="text"],
+.input-group input[type="number"] {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: var(--bg-dark);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  color: var(--text-white);
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+  border-color: var(--primary-cyan);
+}
+
+.gender-section {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.gender-option {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background-color: var(--bg-dark);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.gender-option input[type="radio"] {
+  accent-color: var(--primary-cyan);
+  width: 18px;
+  height: 18px;
+}
+
+.gender-option label {
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.generate-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--accent-green);
+  color: #000;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.generate-btn:hover {
+  background-color: var(--green-hover);
+  transform: translateY(-2px);
+}
+
+
+/* ==========================================
+   Article Detail View Layouts
+   ========================================== */
+.detail-card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  max-width: 850px;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 24px;
+  margin-bottom: 28px;
+}
+
+.detail-title {
+  font-size: 26px;
+  color: var(--primary-cyan);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.detail-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  line-height: 1.75;
+}
+
+.detail-text p {
+  font-size: 15px;
+  color: #e2e8f0;
+}
+
+.detail-text ul {
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 8px 0;
+}
+
+.detail-text li {
+  font-size: 15px;
+  color: #e2e8f0;
+  list-style-type: disc;
+}
+
+.detail-text strong {
+  color: var(--accent-green);
+  font-weight: 600;
+}

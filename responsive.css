@@ -1,0 +1,218 @@
+/* ==========================================================
+   NeutriFIT Responsive Layer
+   Added without replacing the project's existing styles.
+   ========================================================== */
+
+html { width: 100%; max-width: 100%; overflow-x: hidden; }
+body { max-width: 100%; overflow-x: hidden; }
+img, video, iframe { max-width: 100%; }
+button, input, select, textarea { max-width: 100%; }
+
+/* Mobile navigation controls: hidden on desktop. */
+.mobile-menu-toggle,
+.mobile-menu,
+.mobile-menu-overlay { display: none; }
+
+/* Keep large media grids inside the viewport. */
+.main-content { min-width: 0; }
+.workout-grid,
+.grid-container,
+.program,
+.content-grid { min-width: 0; }
+.media-card, .card, .detail-card { min-width: 0; }
+.media-container video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+@media (max-width: 1100px) {
+    .main-content { padding-left: clamp(20px, 3vw, 40px); padding-right: clamp(20px, 3vw, 40px); }
+    .grid-container { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .workout-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .program { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 900px) {
+    body { overflow-y: auto !important; }
+
+    /* Existing desktop sidebar is replaced by the hidden drawer on smaller screens. */
+    .sidebar {
+        position: fixed !important;
+        left: -280px !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        width: 260px !important;
+        height: 100vh !important;
+        max-height: 100vh !important;
+        z-index: 1100 !important;
+        padding: 24px 16px !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        gap: 30px !important;
+        overflow-y: auto !important;
+        transition: left .25s ease !important;
+    }
+
+    /* Do not let a legacy .logo/.back fixed rule create stray elements on mobile. */
+    .sidebar .logo { position: static !important; }
+    .sidebar .back { position: static !important; }
+
+    .main-content {
+        width: 100%;
+        min-width: 0;
+        padding: 24px clamp(14px, 4vw, 32px);
+    }
+
+    .header-title, .page-title { font-size: clamp(22px, 5vw, 28px); line-height: 1.25; }
+    .detail-card { padding: clamp(22px, 5vw, 40px); }
+    .detail-header { flex-wrap: wrap; }
+    .detail-title { font-size: clamp(21px, 5vw, 26px); }
+
+    .grid-container { grid-template-columns: minmax(0, 1fr); width: 100%; }
+    .workout-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .program { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 20px; }
+
+    .calculator-form { width: min(100%, 500px); }
+    .gender-section { flex-wrap: wrap; }
+    .gender-option { min-width: 0; }
+
+    /* Workout pages with a horizontal desktop header become compact on mobile. */
+    .ppl-row-card { height: auto; min-height: 100px; }
+    .row-content { padding: 18px 20px; gap: 14px; flex-wrap: wrap; }
+    .row-content p { margin-left: 0; flex-basis: 100%; }
+
+    /* Generic pages that contain a fixed back button. */
+    .back { z-index: 20; }
+
+    /* Home page: keep the hero composition usable instead of clipping it. */
+    body:has(.hero-img) { overflow-y: auto !important; }
+    .hero { min-height: 100vh; }
+    .hero-img { max-width: 78vw; width: auto; height: auto; max-height: 72vh; left: 50%; }
+    .leftText, .rightText { font-size: clamp(42px, 11vw, 78px); line-height: .9; }
+    .leftText { left: 7vw; top: 80px; }
+    .rightText { right: 7vw; bottom: 80px; }
+    .credit { right: 7vw; top: 28px; }
+    .arrow { font-size: clamp(42px, 10vw, 70px); }
+}
+
+@media (max-width: 900px) {
+    .mobile-menu-toggle {
+        display: flex;
+        position: fixed;
+        top: 14px;
+        right: 14px;
+        width: 46px;
+        height: 46px;
+        z-index: 1300;
+        border: 1px solid rgba(0,229,255,.45);
+        border-radius: 12px;
+        background: rgba(9,10,16,.94);
+        box-shadow: 0 6px 20px rgba(0,0,0,.35);
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+    .mobile-menu-toggle span { display: block; width: 21px; height: 2px; border-radius: 2px; background: #00e5ff; transition: transform .2s ease, opacity .2s ease; }
+    .mobile-menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .mobile-menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .mobile-menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: -310px;
+        width: min(290px, 86vw);
+        height: 100vh;
+        z-index: 1250;
+        padding: 22px 18px;
+        background: #090a10;
+        border-left: 1px solid rgba(0,229,255,.18);
+        box-shadow: -12px 0 30px rgba(0,0,0,.4);
+        overflow-y: auto;
+        transition: right .25s ease;
+    }
+    .mobile-menu.open { right: 0; }
+    .mobile-menu-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        z-index: 1200;
+        background: rgba(0,0,0,.55);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .25s ease, visibility .25s ease;
+    }
+    .mobile-menu-overlay.open { opacity: 1; visibility: visible; }
+    .mobile-menu-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 26px; }
+    .mobile-menu-logo { color: #fff; font-size: 19px; font-weight: 700; }
+    .mobile-menu-logo span { color: #00e5ff; }
+    .mobile-menu-close { border: 0; background: transparent; color: #fff; font-size: 32px; line-height: 1; cursor: pointer; padding: 2px 8px; }
+    .mobile-menu-links { display: flex; flex-direction: column; gap: 11px; }
+    .mobile-menu-links a { display: block; padding: 12px 14px; border: 1px solid rgba(0,229,255,.2); border-radius: 12px; color: #00c853; text-decoration: none; font-size: 15px; font-weight: 600; }
+    .mobile-menu-links a:hover, .mobile-menu-links a:focus { background: rgba(0,229,255,.1); color: #00e5ff; outline: none; }
+
+    body.mobile-menu-lock { overflow: hidden !important; }
+
+    .main-content { padding: 20px 12px 30px; }
+    .workout-grid { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+    .program { grid-template-columns: minmax(0, 1fr); padding: 14px; }
+    .calculator-form { padding: 22px 18px; gap: 18px; }
+    .gender-section { flex-direction: column; }
+    .gender-option { width: 100%; }
+    .header-title, .page-title { margin-bottom: 20px; }
+    .divider { margin-bottom: 24px; }
+    .media-container { height: 240px !important; }
+    .media-container video { height: 100%; }
+
+    .row-content { align-items: flex-start; }
+    .row-content h2 { font-size: 19px; }
+    .view-btn { margin-left: auto; }
+
+    /* Recommendation pages */
+    .page-shell { width: min(100% - 22px, 1100px); padding: 70px 0 35px; }
+    .top-bar { padding-right: 58px; }
+    .hero { padding: 22px 18px; }
+    .card { padding: 20px 18px; }
+    .content-grid { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+    h1 { font-size: clamp(1.8rem, 9vw, 2.6rem); }
+    .goal { font-size: .98rem; }
+
+    /* BMI result report opened by script.js */
+    .report-container, .result-container, .bmi-report { width: calc(100% - 24px) !important; max-width: 100% !important; }
+}
+
+@media (max-width: 600px) {
+    .main-content { padding: 20px 12px 30px; }
+    .workout-grid { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+    .program { grid-template-columns: minmax(0, 1fr); padding: 14px; }
+    .calculator-form { padding: 22px 18px; gap: 18px; }
+    .gender-section { flex-direction: column; }
+    .gender-option { width: 100%; }
+    .header-title, .page-title { margin-bottom: 20px; }
+    .divider { margin-bottom: 24px; }
+    .media-container { height: 240px !important; }
+    .media-container video { height: 100%; }
+    .row-content { align-items: flex-start; }
+    .row-content h2 { font-size: 19px; }
+    .view-btn { margin-left: auto; }
+    .page-shell { width: min(100% - 22px, 1100px); padding: 70px 0 35px; }
+    .top-bar { padding-right: 58px; }
+    .hero { padding: 22px 18px; }
+    .card { padding: 20px 18px; }
+    .content-grid { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+    h1 { font-size: clamp(1.8rem, 9vw, 2.6rem); }
+    .goal { font-size: .98rem; }
+    .report-container, .result-container, .bmi-report { width: calc(100% - 24px) !important; max-width: 100% !important; }
+}
+
+@media (max-width: 380px) {
+    .mobile-menu-toggle { width: 42px; height: 42px; top: 10px; right: 10px; }
+    .main-content { padding-left: 9px; padding-right: 9px; }
+    .detail-card, .calculator-form { padding: 18px 14px; }
+    .page-shell { width: calc(100% - 16px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}

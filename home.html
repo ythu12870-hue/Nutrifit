@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NutriFIT</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    display:flex;
+    background:#06080d;
+    color:white;
+    overflow:hidden;
+}
+
+/* Sidebar */
+.sidebar {
+            width: 240px;
+            background-color: var(--sidebar-bg);
+            padding: 24px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            flex-shrink: 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--text-white);
+        }
+
+        .logo span {
+            color: var(--primary-cyan);
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .nav-btn {
+            display: block;
+            padding: 10px 16px;
+            color: var(--accent-green);
+            text-decoration: none;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-size: 14px;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .nav-btn:hover {
+            background-color: rgba(0, 229, 255, 0.1);
+        }
+
+        .nav-btn.active {
+            background-color: var(--primary-cyan);
+            color: #000;
+            font-weight: bold;
+            border-color: var(--primary-cyan);
+        }
+
+/* Main */
+
+.main{
+    flex:1;
+    position:relative;
+}
+
+.hero{
+    width:100%;
+    height:100%;
+    position:relative;
+    overflow:hidden;
+}
+
+/* Background Shapes */
+
+.hero::before{
+    content:'';
+    position:absolute;
+    width:700px;
+    height:700px;
+    background:#11151f;
+    transform:rotate(45deg);
+    top:-250px;
+    left:250px;
+}
+
+.hero::after{
+    content:'';
+    position:absolute;
+    width:700px;
+    height:700px;
+    background:#11151f;
+    transform:rotate(45deg);
+    bottom:-300px;
+    right:-100px;
+}
+
+/* Image */
+
+.hero-img{
+    position:absolute;
+    height:100%;
+    left:45%;
+    transform:translateX(-50%);
+    bottom:0;
+    z-index:3;
+}
+
+/* Text */
+
+.leftText{
+    position:absolute;
+    left:90px;
+    top:70px;
+    font-size:105px;
+    font-weight:900;
+    line-height:95px;
+    color:white;
+    text-shadow:0 0 15px #00ff88;
+    z-index:4;
+}
+
+.rightText{
+    position:absolute;
+    right:80px;
+    bottom:90px;
+    font-size:95px;
+    font-weight:900;
+    line-height:90px;
+    color:white;
+    text-shadow:0 0 15px #00ff88;
+    z-index:4;
+}
+
+/* Credit */
+
+.credit{
+    position:absolute;
+    top:70px;
+    right:80px;
+    z-index:5;
+}
+
+.credit p{
+    color:#d6d6d6;
+}
+
+.credit h2{
+    font-weight:600;
+}
+
+/* Arrows */
+
+.arrow{
+    position:absolute;
+    color:#00ff88;
+    font-size:70px;
+    text-shadow:0 0 20px #00ff88;
+    z-index:5;
+}
+
+.left{
+    bottom:50px;
+    left:80px;
+}
+
+.right{
+    top:240px;
+    right:70px;
+    transform:rotate(90deg);
+}
+</style>
+
+    <link rel="stylesheet" href="responsive.css">
+    <script src="menu.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Responsive mobile menu -->
+    <button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="mobile-menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="mobile-menu-overlay" data-menu-close></div>
+    <aside id="mobile-menu" class="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu-header">
+            <div class="mobile-menu-logo"><span>⚡️</span> NeutriFIT</div>
+            <button class="mobile-menu-close" type="button" aria-label="Close navigation menu" data-menu-close>×</button>
+        </div>
+        <nav class="mobile-menu-links" aria-label="Mobile navigation">
+            <a href="home.html">Home</a>
+            <a href="index.html">BMI Calculation</a>
+            <a href="workoutplan.html">Workout Planner</a>
+            <a href="nutrition.html">Nutrition</a>
+            <a href="supplements.html">Supplements</a>
+            <a href="info.html">Info</a>
+        </nav>
+    </aside>
+
+    <aside class="sidebar">
+        <div class="logo">
+            <span>⚡️</span> NeutriFIT
+        </div>
+        <nav class="nav-links">
+            <a href="home.html" class="nav-btn active">Home</a>
+            <a href="index.html" class="nav-btn">Bmi calculation</a>
+            <a href="workoutplan.html" class="nav-btn">Workout Planner</a>
+            <a href="nutrition.html" class="nav-btn">Nutrition</a>
+            <a href="supplements.html" class="nav-btn">Supplement Store</a>
+            <a href="info.html" class="nav-btn">Info</a>
+        </nav>
+    </aside>
+
+<div class="main">
+
+    <div class="hero">
+
+        <h1 class="leftText">
+            BETTER<br>
+            HABIT
+        </h1>
+
+        <img src="media/hp.jpg" class="hero-img">
+
+        <h1 class="rightText">
+            BETTER<br>
+            LIFE
+        </h1>
+
+        <div class="credit">
+            <p>Presented by</p>
+            <h2>Fantastic 5</h2>
+        </div>
+
+        <div class="arrow left">»»»</div>
+        <div class="arrow right">⇈</div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeutriFIT - Key Principles of Healthy Weight Management</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    /* Compact Language Toggle Button Styling */
+    .lang-toggle-btn {
+      background-color: var(--primary-cyan, #00e5ff);
+      color: #0d0f17;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 12px;
+      cursor: pointer;
+      margin-left: auto;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+
+    .lang-toggle-btn:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+  </style>
+
+    <link rel="stylesheet" href="responsive.css">
+    <script src="menu.js" defer></script>
+</head>
+<body>
+
+    <!-- Responsive mobile menu -->
+    <button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="mobile-menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="mobile-menu-overlay" data-menu-close></div>
+    <aside id="mobile-menu" class="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu-header">
+            <div class="mobile-menu-logo"><span>⚡️</span> NeutriFIT</div>
+            <button class="mobile-menu-close" type="button" aria-label="Close navigation menu" data-menu-close>×</button>
+        </div>
+        <nav class="mobile-menu-links" aria-label="Mobile navigation">
+            <a href="home.html">Home</a>
+            <a href="index.html">BMI Calculation</a>
+            <a href="workoutplan.html">Workout Planner</a>
+            <a href="nutrition.html">Nutrition</a>
+            <a href="supplements.html">Supplements</a>
+            <a href="info.html">Info</a>
+        </nav>
+    </aside>
+
+
+  <div class="app-container">
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="logo">
+        <span>⚡️</span> NeutriFIT
+      </div>
+      <nav class="nav-links">
+        <a href="home.html" class="nav-btn">Home</a>
+        <a href="index.html" class="nav-btn">Bmi calculation</a>
+        <a href="workoutplan.html" class="nav-btn">Workout Planner</a>
+        <a href="nutrition.html" class="nav-btn">Nutrition</a>
+        <a href="supplements.html" class="nav-btn">Supplements</a>
+        <a href="info.html" class="nav-btn active">Info</a>
+      </nav>
+    </aside> 
+
+    <a href="info.html" class="prev-btn">
+      <span>PREV</span>
+      <div class="arrow-icon">
+          <i class="fa-solid fa-chevron-left"></i>
+      </div>
+    </a>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <h1 class="header-title">Your Healthy Life Start Here !</h1>
+
+      <!-- Detail Box -->
+      <article class="detail-card">
+        
+        <!-- Icon, Title Section & Compact Translate Button -->
+        <div class="detail-header">
+          <div class="card-icon">🥗</div>
+          <h2 class="detail-title" id="cardTitle">Key Principles of Healthy Weight Management</h2>
+          
+          <button class="lang-toggle-btn" id="langBtn" onclick="toggleLanguage()">မြန်မာစာဖြင့်ဖတ်ရန်</button>
+        </div>
+
+        <!-- English Content -->
+        <div class="detail-text" id="enContent">
+          <p>
+            Weight management is not a short-term goal, but a sustainable lifestyle choice. Many people mistakenly believe that weight management means starving oneself or over-exercising. However, these extreme methods can be detrimental to the body.
+          </p>
+
+          <p>
+            The key to healthy weight management is "Energy Balance," which is the coordination between the calories you consume and the calories your body burns. First, it is essential to determine your Basal Metabolic Rate (BMR). BMR is the baseline amount of calories your body needs to survive while at rest. Tools like the NeutriFit app can help you calculate this accurately based on your age, height, and current weight.
+          </p>
+
+          <p>
+            Second, focus on choosing nutrient-dense foods. Protein is crucial for weight management because it builds muscle and promotes satiety. Additionally, consuming fiber-rich vegetables and fruits improves digestive health. Reducing intake of fats, sugary drinks, and processed foods is the best strategy for long-term health.
+          </p>
+
+          <p>
+            Finally, stay hydrated. Drinking two to three liters of water daily boosts your metabolism and aids in fat burning. Remember that weight management does not happen overnight; it depends entirely on consistency.
+          </p>
+        </div>
+
+        <!-- Myanmar Content (Hidden by default) -->
+        <div class="detail-text" id="myContent" style="display: none;">
+           <p>
+            ဝိတ်ထိန်းသိမ်းခြင်းဆိုသည်မှာ ရေတိုပန်းတိုင်တစ်ခု မဟုတ်ဘဲ ရေရှည်တည်တံ့သော လူနေမှုဘဝပုံစံ ရွေးချယ်မှုတစ်ခု ဖြစ်ပါသည်။ လူအများစုသည် ဝိတ်ထိန်းခြင်းကို အစားငတ်ခံခြင်း သို့မဟုတ် လေ့ကျင့်ခန်း အလွန်အကျွံလုပ်ခြင်းဟု မှားယွင်းစွာ ထင်မှတ်တတ်ကြသည်။ သို့သော် အဆိုပါ ပြင်းထန်လွန်းသော နည်းလမ်းများသည် ခန္ဓာကိုယ်ကို ထိခိုက်ပျက်စီးစေနိုင်ပါသည်။
+          </p>
+
+          <p>
+            ကျန်းမာရေးနှင့်ညီညွတ်သော ဝိတ်ထိန်းသိမ်းခြင်း၏ အဓိကသော့ချက်မှာ "Energy Balance" (စွမ်းအင်မျှတမှု) ဖြစ်ပြီး၊ ၎င်းသည် သင်စားသုံးလိုက်သော ကယ်လိုရီနှင့် ခန္ဓာကိုယ်မှ လောင်ကျွမ်းလိုက်သော ကယ်လိုရီတို့ကြား မျှတအောင် ညှိနှိုင်းဆောင်ရွက်ခြင်း ဖြစ်သည်။ ပထမဦးစွာ မိမိ၏ Basal Metabolic Rate (BMR) ကို သိရှိရန် လိုအပ်ပါသည်။ BMR ဆိုသည်မှာ ခန္ဓာကိုယ် ငြိမ်သက်စွာ နားနေစဉ် အသက်ဆက်ရှင်သန်ရန် လိုအပ်သော အခြေခံ ကယ်လိုရီပမာဏ ဖြစ်သည်။ NeutriFIT အက်ပ်ကဲ့သို့သော ကိရိယာများက သင့်အသက်၊ အရပ်နှင့် လက်ရှိဝိတ်အပေါ် မူတည်၍ BMR ကို တိကျစွာ တွက်ချက်ပေးနိုင်ပါသည်။
+          </p>
+
+          <p>
+            ဒုတိယအချက်မှာ အာဟာရဓာတ် ကြွယ်ဝသော အစားအစာများကို ရွေးချယ်စားသုံးရန် ဖြစ်သည်။ ပရိုတင်း (Protein) သည် ကြွက်သားများကို တည်ဆောက်ပေးပြီး ဗိုက်ဝစေသောကြောင့် ဝိတ်ထိန်းရန်အတွက် အလွန်အရေးပါသည်။ ထို့အပြင် အမျှင်ဓာတ်ကြွယ်ဝသော ဟင်းသီးဟင်းရွက်နှင့် သစ်သီးဝလံများကို စားသုံးခြင်းက အစာချေစနစ်ကို ကောင်းမွန်စေသည်။ အဆီဓာတ်၊ သကြားပါသော အဖျော်ယမကာများနှင့် ပြုပြင်ဖန်တီးထားသော အစားအစာများ စားသုံးမှုကို လျှော့ချခြင်းသည် ရေရှည်ကျန်းမာရေးအတွက် အကောင်းဆုံး နည်းဗျူဟာ ဖြစ်သည်။
+          </p>
+
+          <p>
+            နောက်ဆုံးအနေဖြင့် ရေလုံလောက်စွာ သောက်ပါ။ တစ်နေ့လျှင် ရေ ၂ လီတာမှ ၃ လီတာအထိ သောက်သုံးခြင်းက အစာချေစနစ် (Metabolism) ကို မြှင့်တင်ပေးပြီး အဆီလောင်ကျွမ်းမှုကို အထောက်အကူပြုသည်။ ဝိတ်ထိန်းခြင်းသည် တစ်ညတာအတွင်း ချက်ချင်းမဖြစ်နိုင်ဘဲ စွဲစွဲမြဲမြဲ လုပ်ဆောင်မှုအပေါ် လုံးဝမူတည်ကြောင်း သတိရပါ။
+          </p>
+        </div>
+
+      </article>
+    </main>
+
+  </div>
+
+  <!-- JavaScript logic -->
+  <script>
+    function toggleLanguage() {
+      const en = document.getElementById("enContent");
+      const my = document.getElementById("myContent");
+      const btn = document.getElementById("langBtn");
+      const title = document.getElementById("cardTitle");
+
+      if (en.style.display === "none") {
+        en.style.display = "flex";
+        my.style.display = "none";
+        btn.innerText = "မြန်မာစာဖြင့်ဖတ်ရန်";
+        title.innerText = "Key Principles of Healthy Weight Management";
+      } else {
+        en.style.display = "none";
+        my.style.display = "flex";
+        btn.innerText = "Read in English";
+        title.innerText = "ကျန်းမာရေးနှင့်ညီညွတ်သော ဝိတ်ထိန်းသိမ်းခြင်း၏ အခြေခံမူများ";
+      }
+    }
+  </script>
+
+</body>
+</html>

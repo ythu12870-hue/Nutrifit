@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeutriFIT - PPL Workout Planner</title>
+    <link rel="stylesheet" href="ppl.css">
+
+    <link rel="stylesheet" href="responsive.css">
+    <script src="menu.js" defer></script>
+</head>
+<body>
+
+    <!-- Responsive mobile menu -->
+    <button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="mobile-menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="mobile-menu-overlay" data-menu-close></div>
+    <aside id="mobile-menu" class="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu-header">
+            <div class="mobile-menu-logo"><span>⚡️</span> NeutriFIT</div>
+            <button class="mobile-menu-close" type="button" aria-label="Close navigation menu" data-menu-close>×</button>
+        </div>
+        <nav class="mobile-menu-links" aria-label="Mobile navigation">
+            <a href="home.html">Home</a>
+            <a href="index.html">BMI Calculation</a>
+            <a href="workoutplan.html">Workout Planner</a>
+            <a href="nutrition.html">Nutrition</a>
+            <a href="supplements.html">Supplements</a>
+            <a href="info.html">Info</a>
+        </nav>
+    </aside>
+
+    <div class="app-container">
+        <!-- 1. Minimalist Top Header Bar Banner -->
+        <aside class="sidebar">
+            <div class="logo">
+                <span>⚡️</span> NeutriFIT
+            </div>
+        </aside>
+        
+        <!-- 2. Main Page Content Section Area -->
+        <main class="main-content">
+            <h1 class="header-title">PPL WORKOUT PLANNER</h1>
+            <hr class="divider">
+
+          
+
+            <!-- 🗂 3-Row Vertical Routing Stack Matrix Configuration -->
+            <div class="ppl-row-stack">
+                
+                <!-- Row 1: Push Day Navigation Block -->
+                <a href="push.html" class="ppl-row-card push-theme">
+                    <div class="row-overlay"></div>
+                    <div class="row-content">
+                        <h2>PUSH DAY</h2>
+                        <p>Targets: Chest, Shoulders, & Triceps</p>
+                        <span class="view-btn">View Routine →</span>
+                    </div>
+                </a>
+
+                <!-- Row 2: Pull Day Navigation Block -->
+                <a href="pull.html" class="ppl-row-card pull-theme">
+                    <div class="row-overlay"></div>
+                    <div class="row-content">
+                        <h2>PULL DAY</h2>
+                        <p>Targets: Back, Rear Delts, & Biceps</p>
+                        <span class="view-btn">View Routine →</span>
+                    </div>
+                </a>
+
+                <!-- Row 3: Leg Day Navigation Block -->
+                <a href="leg.html" class="ppl-row-card leg-theme">
+                    <div class="row-overlay"></div>
+                    <div class="row-content">
+                        <h2>LEG DAY</h2>
+                        <p>Targets: Quads, Hamstrings, Glutes, & Calves</p>
+                        <span class="view-btn">View Routine →</span>
+                    </div>
+                </a>
+
+            </div>
+        </main>
+    </div>
+    <a href="workoutplan.html" class="back">
+        <i class="fas fa-arrow-left"> 🔙</i> 
+    </a>
+</body>
+</html>

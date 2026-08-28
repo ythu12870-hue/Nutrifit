@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workoutplanner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+       :root {
+  --bg-dark: #0d0f17;
+  --sidebar-bg: #090a10;
+  --card-bg: #161822;
+  --icon-bg: #1e202d;
+  
+  --primary-cyan: #00e5ff;
+  --accent-green: #00c853;
+  --green-hover: #00e676;
+  --text-white: #ffffff;
+  --text-muted: #9e9e9e;
+  
+  --border-color: #00e5ff33;
+  --radius-lg: 16px;
+  --radius-md: 20px;
+  --radius-sm: 8px;
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Layout Structure - ဘေးတိုက် ဖြစ်စေရန် */
+        body {
+            background: #012529;
+            display: flex;
+            min-height: 100vh;
+            background-color: #090a10;
+        }
+
+        /* Sidebar Section */
+        .sidebar {
+            width: 240px;
+            background-color: var(--sidebar-bg);
+            padding: 24px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            flex-shrink: 0;
+        }
+
+        .logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--text-white);
+}
+
+        .logo span {
+            color: var(--primary-cyan);
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .nav-btn {
+            display: block;
+            padding: 10px 16px;
+            color: var(--accent-green);
+            text-decoration: none;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-size: 14px;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .nav-btn:hover {
+            background-color: rgba(0, 229, 255, 0.1);
+        }
+
+        .nav-btn.active {
+            background-color: var(--primary-cyan);
+            color: #000;
+            font-weight: bold;
+            border-color: var(--primary-cyan);
+        }
+
+        /* Main Content Container */
+        .main-content {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        /* Header */
+        header {
+            background: #090a10;
+            color: white;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 3px 8px rgba(0,0,0,.2);
+        }
+
+        header h1 {
+            letter-spacing: 3px;
+            color: #00c853;
+        
+        }
+
+        .back {
+            position: absolute;
+            background-color: black;
+            left: 20px;
+            color: white;
+            font-size: 28px;
+            text-decoration: none;
+        }
+
+        /* Program */
+        .program {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 25px;
+            padding: 30px;
+            background-color: #0d0f17;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            text-align: center;
+            padding: 15px;
+            transition: .3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,.15);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+       
+
+        .card h3 {
+            margin-top: 12px;
+            color: #00c853;
+        }
+
+        /* Divider */
+        hr {
+            border: none;
+            height: 3px;
+            background: #00c853;
+            margin: 15px 30px;
+        }
+           /* Title */
+        .title {
+            text-align: center;
+            color: #00c853;
+            margin: 25px;
+            letter-spacing: 4px;
+           
+        }
+        /* Workout */
+        .workout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 20px;
+            padding: 20px 30px 40px;
+            background-color: #0d0f17;
+        }
+
+        .item {
+            background: white;
+            border-radius: 12px;
+            text-align: center;
+            padding: 15px;
+            transition: .3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,.12);
+        }
+
+        .item:hover {
+            background: #b2ebf2;
+            transform: scale(1.05);
+        }
+
+        .item img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+
+        .item p {
+            margin-top: 10px;
+            font-size: 15px;
+            font-weight: bold;
+            color: #00c853;
+        }
+    </style>
+
+    <link rel="stylesheet" href="responsive.css">
+    <script src="menu.js" defer></script>
+</head>
+<body>
+
+    <!-- Responsive mobile menu -->
+    <button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="mobile-menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="mobile-menu-overlay" data-menu-close></div>
+    <aside id="mobile-menu" class="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu-header">
+            <div class="mobile-menu-logo"><span>⚡️</span> NeutriFIT</div>
+            <button class="mobile-menu-close" type="button" aria-label="Close navigation menu" data-menu-close>×</button>
+        </div>
+        <nav class="mobile-menu-links" aria-label="Mobile navigation">
+            <a href="home.html">Home</a>
+            <a href="index.html">BMI Calculation</a>
+            <a href="workoutplan.html">Workout Planner</a>
+            <a href="nutrition.html">Nutrition</a>
+            <a href="supplements.html">Supplements</a>
+            <a href="info.html">Info</a>
+        </nav>
+    </aside>
+
+
+    <!-- Sidebar Bar -->
+    <aside class="sidebar">
+        <div class="logo">
+            <span>⚡️</span> NeutriFIT
+        </div>
+        <nav class="nav-links">
+            <a href="home.html" class="nav-btn">Home</a>
+            <a href="index.html" class="nav-btn">Bmi calculation</a>
+            <a href="workoutplan.html" class="nav-btn active">Workout Planner</a>
+            <a href="nutrition.html" class="nav-btn">Nutrition</a>
+            <a href="supplements.html" class="nav-btn">Supplements</a>
+            <a href="info.html" class="nav-btn">Info</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <!-- Header -->
+        <header>
+            <h1>PROGRAM</h1>
+        </header>
+
+        <!-- Program Section -->
+        <section class="program">
+            <div class="card">
+                <a href="ppl.html">
+                <img src="media/ppl.jpg" alt="">
+                </a>
+                <h3>PPL</h3>
+            </div>
+            <div class="card">
+                <a href="fullbody.html">
+                <img src="media/fullbody.jpg" alt="">
+                </a>
+                <h3>Full Body</h3>
+                
+            </div>
+            <div class="card">
+                <a href="yoga.html">
+                <img src="media/yoga.jpg" alt="">
+                </a>
+                <h3>Yoga</h3>
+                
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- Workout Section -->
+        <h2 class="title">WORKOUTS</h2>
+        <section class="workout">
+            <div class="item">
+                <a href="chest.html">
+                <img src="media/chest.jpg">
+                </a>
+                <p>Chest</p>
+                
+            </div>
+            <div class="item">
+                <a href="biceps.html">
+                <img src="media/biceps.jpg">
+                </a>
+                <p>Biceps</p>
+                
+            </div>
+            <div class="item">
+                <a href="shoulders.html">
+                <img src="media/shoulders.jpg">
+                </a>
+                <p>Shoulders</p>
+            
+            </div>
+            <div class="item">
+                <a href="forearms.html">
+                <img src="media/forearms.jpg">
+                </a>
+                <p>Forearms</p>
+                
+            </div>
+            <div class="item">
+                <a href="neck.html">
+                <img src="media/neck.jpg">
+                </a>
+                <p>Neck</p>
+                
+            </div>
+            <div class="item">
+                <a href="abs.html">
+                <img src="media/abs.jpg">
+                </a>
+                <p>Abs</p>
+                
+            </div>
+            <div class="item">
+                <a href="back.html">
+                <img src="media/back.jpg">
+                </a>
+                <p>Back</p>
+                
+            </div>
+            <div class="item">
+                <a href="triceps.html">
+                <img src="media/triceps.jpg">
+                </a>
+                <p>Triceps</p>
+                
+            </div>
+            <div class="item">
+                <a href="hips.html">
+                <img src="media/hips.jpg">
+                </a>
+                <p>Hips</p>
+                
+            </div>
+            <div class="item">
+                <a href="calves.html">
+                <img src="media/calves.jpg">
+                </a>
+                <p>Calves</p>
+                
+            </div>
+            <div class="item">
+                <a href="quadriceps.html">
+                <img src="media/quadricepts.jpg">
+                </a>
+                <p>Quadriceps</p>
+                
+            </div>
+            <div class="item">
+                <a href="hamstrings.html">
+                <img src="media/hamstrings.jpg">
+                </a>
+                <p>Hamstrings</p>
+                
+            </div>
+            <div class="item">
+                <a href="cardio.html">
+                <img src="media/cardio.jpg">
+                </a>
+                <p>Cardio</p>
+                
+            </div>
+            <div class="item">
+                <a href="bodyweight.html">
+                <img src="media/bodyweight.jpg">
+                </a>
+                <p>Body Weight</p>
+                
+            </div>
+            <div class="item">
+                <a href="dumbbell.html">
+                <img src="media/dumbbell.jpg">
+                </a>
+                <p>Dumbbell</p>
+                
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
